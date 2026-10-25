@@ -1,6 +1,8 @@
 let i =1;
 let terminal,p,inp,files,firefox;
 let files_open = false;
+let files_amount=0;
+let file_names = [];
 
 
 
@@ -62,11 +64,30 @@ function files_app(){
     })
 
     document.body.appendChild(document.createElement('br'));
-
+    
+    if(files_amount==0){
     const empty=document.createElement('p');
     empty.id='empty';
     empty.textContent='Folder is Empty';
     files.appendChild(empty);
+    }
+    else{
+        const file_div = document.createElement('div');
+        file_div.style.display = 'flex';
+        files.appendChild(file_div)
+        for(let j=0;j<files_amount;j++){
+
+        const file_div2 = document.createElement('div');
+        file_div.appendChild(file_div2)
+            const file_button = document.createElement('button');
+            file_button.id = 'file_button';
+            file_div2.appendChild(file_button);
+            const file_text = document.createElement('p');
+            file_text.style.marginLeft = '20px';
+            file_text.textContent = file_names[j];
+            file_div2.appendChild(file_text);
+        }
+    }
 }
 
 function firefox_open(){
@@ -103,6 +124,20 @@ function firefox_open(){
     firefox.appendChild(fir_input2);
 }
 
+function new_file(file_name){
+    files_amount++;
+    const result = file_name.replace(/^mkdir\s+|\/$/g, "");
+    file_names.push(result);
+    console.log(file_names);
+}
+
+function ls(){
+    const ls_span = document.createElement('p');
+    ls_span.id = 'previous';
+    ls_span.textContent = file_names;
+    terminal.appendChild(ls_span);
+}
+
 function new_line(){
     let p_memory = p.textContent;
     let inp_memory = inp.value;
@@ -119,6 +154,12 @@ function new_line(){
     }
     if(inp_memory == 'firefox'){
         firefox_open();
+    }
+    if(inp_memory.startsWith('mkdir') && inp_memory.endsWith('/')){
+        new_file(inp_memory);
+    }
+    if(inp_memory=='ls'){
+        ls();
     }
 
     p = document.createElement('span');

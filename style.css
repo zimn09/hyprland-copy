@@ -121,3 +121,13 @@ body{
 #firefox-input:focus,#firefox-input2:focus{
     border: none;
 }
+#file_button{
+    width: 100px;
+    height: 100px;
+    background-image: url('folder.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border:0.5px solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+}
