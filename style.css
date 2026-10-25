@@ -1,0 +1,123 @@
+@keyframes slidein {
+    from {
+        margin-top: 900px;
+        height: 50px;
+    }
+    to {
+    margin-top: 15px;
+    height: 850px;
+    }
+}
+
+@keyframes slidehalf {
+    from {
+    width: 1820px;
+    }
+
+    to {
+    width: 900px;
+    }
+}
+
+body{
+    background-image: url("images.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+}
+#terminal{
+    animation: slidein 0.2s;
+    width: 1820px;
+    height: 850px;
+    background-color: rgb(21, 29, 51);
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    opacity: 75%;
+    padding:20px;
+}
+#terminal:hover,#terminal-half:hover,#files:hover,#firefox:hover{
+    border:2px solid aqua;
+}
+#pre-input{
+    color:white;
+    font-size: 20px;
+}
+#input1{
+    border:none;
+    background-color: rgb(21, 29, 51);
+    opacity: 75%;
+    color:white;
+    outline: none;
+}
+#input1:focus{
+    border: none;
+}
+#previous{
+    color:white;
+    font-size: 16px;
+}
+#terminal-half{
+    animation: slidhalf 0.2s;
+    width: 900px;
+    height: 850px;
+    background-color: rgb(21, 29, 51);
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    opacity: 75%;
+    padding:10px;
+}
+#files{
+    width: 900px;
+    height: 850px;
+    background-color: white;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    padding:10px;
+}
+#empty{
+    text-align: center;
+    font-size: xx-large;
+    color: black;
+}
+#files-full{
+    animation: slidein 0.2s;
+    width: 1820px;
+    height: 850px;
+    background-color: white;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    padding:20px;
+}
+#firefox{
+    width: 900px;
+    height: 850px;
+    background-color: white;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    padding:10px;
+}
+#firefox-input{
+    margin-left: 100px;
+    width:700px;
+    height:40px;
+    font-size: 30px;
+    border:3px solid black;
+    border-radius:15px;
+}
+#firefox-input2{
+    margin-top: 100px;
+    margin-left: 50px;
+    width:350px;
+    height:30px;
+    font-size: 20px;
+    border:3px solid black;
+    border-radius:15px;
+}
+#firefox-input:focus,#firefox-input2:focus{
+    border: none;
+}
